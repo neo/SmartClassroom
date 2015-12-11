@@ -6,7 +6,7 @@ The project is based on [pySerial](https://github.com/pyserial/pyserial), [Pytho
 ## Basic Setup
 1. Go to [Twitter Apps](https://apps.twitter.com/) to create an app and generate your API tokens if you haven't already
 2. Hook up the Arduino board with the sensors and output devices. [This](./sketch/) is a example hooking up with a button, a 16 * 2 LCD and a [ADXL345 accelerometer](http://playground.arduino.cc/Main/InterfacingWithHardware#motion_accelerometer):
-  ![ssketch](./sketch/sketch_bb.png)
+	![ssketch](./sketch/sketch_bb.png)
 3. Clone this repository or [Download ZIP](https://github.com/neolwc/SmartClassroom/archive/master.zip)
 4. Paste your Twitter API tokens to `tweet.py`
 5. Use the Arduino IDE to open the `ArduinoAPI.ino` under the directory [ArduinoAPI](./ArduinoAPI/)
@@ -37,12 +37,12 @@ while True:
 	button = arduino.getState(buttonPin)
 	time.sleep(0.1)
 	if button:
-			today += 1
-			total += 1
-			tmp = arduino.getTemp()
-			arduino.LCD(today, total, int(round(tmp)))
-			name = str(raw_input("Who pressed me?! "))
-			print tweet(name + " pressed the big red button!")
-			time.sleep(1)
+		today += 1
+		total += 1
+		tmp = arduino.getTemp()
+		arduino.LCD(today, total, int(round(tmp)))
+		name = str(raw_input("Who pressed me?! "))
+		print tweet(name + " pressed the big red button!")
+		time.sleep(1)
 ```
 It gets the name from user input in the Python console when somebody presses the button and send a tweet with the name.

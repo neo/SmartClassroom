@@ -14,10 +14,10 @@ while True:
 	button = arduino.getState(buttonPin)
 	time.sleep(0.1)
 	if button:
-			today += 1
-			total += 1
-			tmp = arduino.getTemp()
-			arduino.LCD(today, total, int(round(tmp)))
-			name = str(raw_input("Who pressed me?! "))
-			print tweet(name + " pressed the big red button!")
-			time.sleep(1)
+		today += 1
+		total += 1
+		tmp = arduino.getTemp()
+		arduino.LCD(today, total, int(round(tmp)))
+		name = str(raw_input("Who pressed me?! "))
+		print tweet(name + " pressed the big red button!")
+		time.sleep(1)
